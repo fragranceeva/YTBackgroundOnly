@@ -20,7 +20,7 @@ A lightweight iOS tweak for YouTube that enables continuous background playback 
 ## 📥 Installation
 
 Due to GitHub upload policies, release binaries are packaged as individual `.zip` archives.  
-Download the appropriate archive from [Releases](https://github.com/hooray804/YTBackgroundOnly/releases) and tap it in the iOS **Files** app to extract the file.
+Download the appropriate archive from [Releases](https://github.com/hooray804/YTBackgroundOnly/releases) and unzip it in the iOS Files app to extract the file.
 
 | Archive | Contained File | Recommended For |
 | :--- | :--- | :--- |
