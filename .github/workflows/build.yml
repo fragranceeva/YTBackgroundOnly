@@ -1,0 +1,42 @@
+name: Build Tweak
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          brew install ldid
+
+      - name: Setup Theos and iOS SDKs
+        run: |
+          git clone --recursive https://github.com/theos/theos.git ${{ github.workspace }}/theos
+          git clone --depth=1 https://github.com/theos/sdks.git ${{ github.workspace }}/theos/sdks
+
+      - name: Compile and Package
+        env:
+          THEOS: ${{ github.workspace }}/theos
+        run: |
+          make clean
+          make package THEOS_PACKAGE_SCHEME=rootless FINALPACKAGE=1
+          
+          mkdir -p output
+          cp packages/*.deb output/
+          find .theos/obj -name "YTBackgroundOnly.dylib" -exec cp {} output/ \;
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: YTBackgroundOnly-Build
+          path: output/*
