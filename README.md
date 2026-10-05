@@ -19,15 +19,27 @@ A lightweight iOS tweak for YouTube that enables continuous background playback 
 
 ## 📥 Installation
 
-Download the latest `.deb` or `.dylib` from the [GitHub Actions Artifacts](https://github.com/hooray804/YTBackgroundOnly/actions) or Releases page.
+Due to GitHub upload policies, release binaries are packaged as individual `.zip` archives.  
+Download the appropriate archive from [Releases](https://github.com/hooray804/YTBackgroundOnly/releases) and tap it in the iOS **Files** app to extract the file.
 
-### 1. Sideloading (Feather / SideStore / Sideloadly / TrollStore)
-- Inject `YTBackgroundOnly.dylib` (or the `.deb` package) directly into your decrypted YouTube `.ipa`.
-- For **LiveContainer**, simply add `YTBackgroundOnly.dylib` under the app's Tweak / Dynamic Library settings.
+| Archive | Contained File | Recommended For |
+| :--- | :--- | :--- |
+| **`YTBackgroundOnly.deb.zip`** | `.deb` | Rootless Jailbreak (Sileo/Zebra), Feather, TrollStore |
+| **`YTBackgroundOnly.dylib.zip`** | `.dylib` | LiveContainer, IPA Dylib Injection (SideStore/Azule) |
 
-### 2. Jailbroken Devices (Rootless)
-- Open the `.deb` file in your preferred package manager (Sileo, Zebra) and install.
-- Respring or restart the YouTube app.
+### 1. Sideloading (Feather / SideStore / Sideloadly)
+1. Download and extract **`YTBackgroundOnly.deb.zip`** (or `YTBackgroundOnly.dylib.zip`).
+2. Inject the extracted file into your decrypted YouTube `.ipa`.
+3. Sign and install the patched IPA.
+
+### 2. LiveContainer
+1. Download and extract **`YTBackgroundOnly.dylib.zip`**.
+2. Open LiveContainer, go to YouTube's settings, and add `YTBackgroundOnly.dylib` under Tweaks / Dynamic Libraries.
+
+### 3. Rootless Jailbreak
+1. Download and extract **`YTBackgroundOnly.deb.zip`**.
+2. Share the extracted `.deb` to your package manager (Sileo, Zebra) and install.
+3. Restart YouTube.
 
 ---
 
