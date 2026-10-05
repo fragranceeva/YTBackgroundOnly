@@ -1,6 +1,6 @@
 # YTBackgroundOnly
 
-A lightweight iOS tweak for YouTube that enables continuous background playback and bypasses the annoying "Continue watching?" / "Are you there?" interruption dialogs.
+A lightweight iOS tweak for YouTube that enables continuous background playback and bypasses the annoying "Video paused. Continue watching?" / "Are you there?" interruption dialogs.
 
 [![Build Tweak](https://github.com/hooray804/YTBackgroundOnly/actions/workflows/build.yml/badge.svg)](https://github.com/hooray804/YTBackgroundOnly/actions/workflows/build.yml)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
