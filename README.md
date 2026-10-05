@@ -28,7 +28,7 @@ Download the appropriate archive from [Releases](https://github.com/hooray804/YT
 | **`YTBackgroundOnly.dylib.zip`** | `.dylib` | LiveContainer, IPA Dylib Injection (SideStore/Azule) |
 
 ### 1. Sideloading (Feather / SideStore / Sideloadly)
-1. Download and extract **`YTBackgroundOnly.deb.zip`** (or `YTBackgroundOnly.dylib.zip`).
+1. Download and extract **`YTBackgroundOnly.deb.zip` (recommended)** or `YTBackgroundOnly.dylib.zip`.
 2. Inject the extracted file into your decrypted YouTube `.ipa`.
 3. Sign and install the patched IPA.
 
