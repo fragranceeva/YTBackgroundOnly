@@ -8,7 +8,7 @@ A lightweight iOS tweak for YouTube that enables continuous background playback 
 
 ---
 
-## ✨ Features
+## Features
 
 - **Background Audio Playback:** Listen to your favorite videos and music while using other apps or with your device locked.
 - **Bypass "Are you there?" Prompts:** Prevents YouTube from pausing long playback sessions and asking if you are still watching.
@@ -17,7 +17,7 @@ A lightweight iOS tweak for YouTube that enables continuous background playback 
 
 ---
 
-## 📥 Installation
+## Installation
 
 Due to GitHub upload policies, release binaries are packaged as individual `.zip` archives.  
 Download the appropriate archive from [Releases](https://github.com/hooray804/YTBackgroundOnly/releases) and unzip it in the iOS Files app to extract the file.
@@ -43,7 +43,7 @@ Download the appropriate archive from [Releases](https://github.com/hooray804/YT
 
 ---
 
-## 🛠️ Building from Source
+## Building from Source
 
 ### Prerequisites
 - macOS or Linux with [Theos](https://theos.dev/) installed.
@@ -68,13 +68,13 @@ The compiled binary will be located in `.theos/obj/` or `packages/`.
 
 ---
 
-## 📜 Credits & Acknowledgments
+## Credits & Acknowledgments
 
 * [YouMod](https://github.com/Tonwalter888/YouMod) for inspiration and reference.
 * [Theos](https://theos.dev/) development team.
 
 ---
 
-## 📄 License
+## License
 
 This project uses GPLv3 license. See [LICENSE](LICENSE) for more details.
