@@ -1,23 +1,23 @@
-name: Build Tweak
+name: Build and Release
 
 on:
   push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: macos-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: |
-          brew install ldid
+        run: brew install ldid
 
       - name: Setup Theos and iOS SDKs
         run: |
@@ -33,11 +33,24 @@ jobs:
           make package THEOS_PACKAGE_SCHEME=rootless FINALPACKAGE=1
           
           mkdir -p output
-          cp packages/*.deb output/
           find .theos/obj -name "YTBackgroundOnly.dylib" -exec cp {} output/ \;
+          cp packages/*.deb output/
+          
+          cd output
+          zip -j YTBackgroundOnly.dylib.zip YTBackgroundOnly.dylib
+          zip -j YTBackgroundOnly.deb.zip *.deb
+          
+          rm -f YTBackgroundOnly.dylib *.deb
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: YTBackgroundOnly-Build
-          path: output/
+          name: YTBackgroundOnly-Release-Zips
+          path: output/*.zip
+
+      - name: Create Release and Upload Assets
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: output/*.zip
+          generate_release_notes: true
