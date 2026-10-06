@@ -11,7 +11,7 @@ A lightweight iOS tweak for YouTube that enables continuous background playback 
 ## Features
 
 - **Background Audio Playback:** Listen to your favorite videos and music while using other apps or with your device locked.
-- **Bypass "Are you there?" Prompts:** Prevents YouTube from pausing long playback sessions and asking if you are still watching.
+- **Bypass "Video paused. Continue watching?" Prompts:** Prevents YouTube from pausing long playback sessions and asking if you are still watching.
 - **Ultra Lightweight:** Pure Objective-C / Logos runtime hooks without complex UI overhead or unnecessary modifications.
 - **Multiple Injection Support:** Compatible with Rootless Jailbreak, TrollStore, LiveContainer, SideStore, and Feather.
 
@@ -24,10 +24,10 @@ Download the appropriate archive from [Releases](https://github.com/hooray804/YT
 
 | Archive | Contained File | Recommended For |
 | :--- | :--- | :--- |
-| **`YTBackgroundOnly.deb.zip`** | `.deb` | Rootless Jailbreak (Sileo/Zebra), Feather, TrollStore |
+| **`YTBackgroundOnly.deb.zip`** | `.deb` | Rootless Jailbreak (Sileo/Zebra), Feather, TrollStore(via TrollFools) |
 | **`YTBackgroundOnly.dylib.zip`** | `.dylib` | LiveContainer, IPA Dylib Injection (SideStore/Azule) |
 
-### 1. Sideloading (Feather / SideStore / Sideloadly)
+### 1. Sideloading (Feather / Sideloadly)
 1. Download and extract **`YTBackgroundOnly.deb.zip` (recommended)** or `YTBackgroundOnly.dylib.zip`.
 2. Inject the extracted file into your decrypted YouTube `.ipa`.
 3. Sign and install the patched IPA.
@@ -36,7 +36,10 @@ Download the appropriate archive from [Releases](https://github.com/hooray804/YT
 1. Download and extract **`YTBackgroundOnly.dylib.zip`**.
 2. Open LiveContainer, go to YouTube's settings, and add `YTBackgroundOnly.dylib` under Tweaks / Dynamic Libraries.
 
-### 3. Rootless Jailbreak
+### 3. SideStore
+1. Inject the extracted file using tools like Feather, Sideloadly, or Azule, then install with SideStore/Sideloadly.⁠
+
+### 4. Rootless Jailbreak
 1. Download and extract **`YTBackgroundOnly.deb.zip`**.
 2. Share the extracted `.deb` to your package manager (Sileo, Zebra) and install.
 3. Restart YouTube.
@@ -53,14 +56,14 @@ Download the appropriate archive from [Releases](https://github.com/hooray804/YT
 
 ```bash
 # Clone the repository
-git clone [https://github.com/hooray804/YTBackgroundOnly.git](https://github.com/hooray804/YTBackgroundOnly.git)
+git clone https://github.com/hooray804/YTBackgroundOnly.git
 cd YTBackgroundOnly
 
 # Build Rootless .deb package
 make clean package THEOS_PACKAGE_SCHEME=rootless FINALPACKAGE=1
 
 # Build standalone .dylib for sideloading
-make clean FINALPACKAGE=1
+make clean && make FINALPACKAGE=1
 
 ```
 
